@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normas de Convivencia / House Rules</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+  :root {
+    --cream: #FAF6F0;
+    --warm-white: #FDF9F4;
+    --terracotta: #C4704A;
+    --terracotta-light: #E8956D;
+    --sage: #7A8C6E;
+    --sage-light: #A8B99A;
+    --charcoal: #2C2C2C;
+    --mid-gray: #666;
+    --light-gray: #B0A99A;
+    --gold: #C9A96E;
+    --gold-light: #E8D4A8;
+    --divider: #E0D5C5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Jost', sans-serif;
+    color: var(--charcoal);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    padding: 50px 40px 40px;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--sage));
+  }
+
+  .header-ornament {
+    font-size: 28px;
+    letter-spacing: 12px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
+
+  .header h1 .accent {
+    color: var(--terracotta);
+    font-style: italic;
+  }
+
+  .header h1 .slash {
+    color: var(--light-gray);
+    font-weight: 300;
+    margin: 0 12px;
+    font-style: normal;
+  }
+
+  .header-sub {
+    margin-top: 16px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--light-gray);
+  }
+
+  .welcome-banner {
+    background: linear-gradient(135deg, var(--terracotta) 0%, #B5603A 100%);
+    color: white;
+    padding: 22px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .welcome-banner .es { text-align: left; }
+  .welcome-banner .en { text-align: right; }
+  .welcome-banner p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    opacity: 0.95;
+  }
+
+  .welcome-banner .divider-v {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  /* ── LANG COLUMNS ── */
+  .bilingual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-top: none;
+  }
+
+  .lang-col {
+    padding: 0;
+  }
+
+  .lang-col.es { border-right: 1px solid var(--divider); }
+
+  .lang-label {
+    padding: 14px 30px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--divider);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lang-col.es .lang-label { color: var(--terracotta); background: #FDF5F0; }
+  .lang-col.en .lang-label { color: var(--sage); background: #F5F8F3; }
+
+  .lang-label .flag { font-size: 1rem; }
+
+  /* ── SECTION ── */
+  .section {
+    display: contents;
+  }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+    border-top: none;
+  }
+
+  .section-title-half {
+    padding: 20px 30px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title-half.es { border-right: 1px solid var(--divider); background: #FDF5F0; }
+  .section-title-half.en { background: #F5F8F3; }
+
+  .section-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .section-title-half h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+
+  .section-title-half small {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    color: var(--light-gray);
+  }
+
+  /* ── RULES GRID ── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--divider);
+    border-top: none;
+    background: var(--warm-white);
+  }
+
+  .rules-col {
+    padding: 20px 30px 24px;
+  }
+
+  .rules-col.es { border-right: 1px solid var(--divider); }
+
+  .rule-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .rule-item:last-child { margin-bottom: 0; }
+
+  .rule-bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .es .rule-bullet { background: #F5E5DD; color: var(--terracotta); }
+  .en .rule-bullet { background: #E3EBE0; color: var(--sage); }
+
+  .rule-text {
+    font-size: 0.87rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--charcoal);
+  }
+
+  .rule-text strong {
+    font-weight: 600;
+    font-size: 0.82rem;
+  }
+
+  /* ── BABY SECTION SPECIAL ── */
+  .baby-section .section-title-half.es { background: #F5F0F8; }
+  .baby-section .section-title-half.en { background: #F5F0F8; }
+
+  .baby-section .section-title-half small { color: #9B7FB5; }
+  .baby-section .section-title-half h2 { color: #5C3D7A; }
+
+  .baby-section .rules-grid { background: var(--warm-white); }
+
+  .baby-section .es .rule-bullet { background: #EDE0F5; color: #7A4FA8; }
+  .baby-section .en .rule-bullet { background: #EDE0F5; color: #7A4FA8; }
+
+  /* ── FOOTER NOTE ── */
+  .footer-note {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.85);
+    padding: 24px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid var(--charcoal);
+    border-top: none;
+    margin-bottom: 30px;
+  }
+
+  .footer-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .footer-note .right { text-align: right; }
+  .footer-note .center { text-align: center; color: var(--gold); font-size: 1.2rem; letter-spacing: 6px; }
+
+  /* ── THANK YOU ── */
+  .thanks {
+    text-align: center;
+    padding: 30px 40px;
+    background: var(--warm-white);
+    border: 1px solid var(--divider);
+  }
+
+  .thanks-ornament {
+    font-size: 22px;
+    letter-spacing: 10px;
+    color: var(--gold);
+    margin-bottom: 14px;
+    opacity: 0.6;
+  }
+
+  .thanks h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+
+  .thanks h3 .accent { color: var(--terracotta); font-style: italic; }
+
+  .thanks p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--mid-gray);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── STRICT SECTION (alcohol/drugs) ── */
+  .strict-section .section-title-half.es { background: #FFF0F0; }
+  .strict-section .section-title-half.en { background: #FFF0F0; }
+  .strict-section .section-title-half small { color: #C0392B; }
+  .strict-section .section-title-half h2 { color: #7B1F1F; }
+  .strict-section .es .rule-bullet { background: #FDDEDE; color: #C0392B; }
+  .strict-section .en .rule-bullet { background: #FDDEDE; color: #C0392B; }
+
+  /* PRINT */
+  @media print {
+    body { padding: 10px; background: white; }
+    .page { max-width: 100%; }
+  }
+
+  @media (max-width: 680px) {
+    .header h1 { font-size: 1.8rem; }
+    .bilingual, .section-header, .rules-grid { grid-template-columns: 1fr; }
+    .lang-col.es, .rules-col.es, .section-title-half.es { border-right: none; border-bottom: 1px solid var(--divider); }
+    .welcome-banner { grid-template-columns: 1fr; text-align: center; }
+    .welcome-banner .divider-v { display: none; }
+    .footer-note { grid-template-columns: 1fr; text-align: center; }
+    .footer-note .right { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-ornament">— ❧ —</div>
+    <h1>
+      <span class="accent">Normas de Convivencia</span>
+      <span class="slash">/</span>
+      House Rules
+    </h1>
+    <p class="header-sub">Bienvenidos a nuestro hogar &nbsp;·&nbsp; Welcome to our home</p>
+  </div>
+
+  <!-- WELCOME -->
+  <div class="welcome-banner">
+    <div class="es">
+      <p>Estamos muy felices de teneros aquí. Estas normas nos ayudan a que la convivencia sea cómoda para todos, incluyendo al pequeño de la casa.</p>
+    </div>
+    <div class="divider-v"></div>
+    <div class="en">
+      <p>We're so happy to have you here. These guidelines help us all share this space comfortably — including the littlest member of the family.</p>
+    </div>
+  </div>
+
+  <!-- LANG LABELS -->
+  <div class="bilingual">
+    <div class="lang-col es">
+      <div class="lang-label"><span class="flag">🇪🇸</span> Español</div>
+    </div>
+    <div class="lang-col en">
+      <div class="lang-label"><span class="flag">🇬🇧</span> English</div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 1: HABITACIONES ══ -->
+  <div class="section-header">
+    <div class="section-title-half es">
+      <div class="section-icon">🛏️</div>
+      <div>
+        <small>Sección 01</small>
+        <h2>Habitación & Espacios Personales</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">🛏️</div>
+      <div>
+        <small>Section 01</small>
+        <h2>Bedroom & Personal Spaces</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Cama hecha cada mañana</strong> antes de salir de la habitación, idealmente antes de las 10:00 h.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Ropa limpia y sucia bien separada</strong> — la sucia en la bolsa o cesto asignado, nunca sobre el suelo o la silla.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Superficies ordenadas</strong> — mesita de noche y escritorio despejados y sin comida ni vasos.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Ventilación diaria</strong> — abrir la ventana unos minutos para airear.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Evitar ruidos</strong> en la habitación pasadas las 23:00 h (música, llamadas en altavoz, etc.).</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Make your bed every morning</strong> before leaving the room, ideally before 10:00 AM.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep clean and dirty clothes separate</strong> — dirty clothes go in the designated bag or hamper, never on the floor or chair.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep surfaces tidy</strong> — bedside table and desk clear, no food or glasses left out.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Air the room daily</strong> — open the window for a few minutes each day.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep noise down</strong> in the bedroom after 11:00 PM (music, speakerphone calls, etc.).</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 2: BAÑO ══ -->
+  <div class="section-header">
+    <div class="section-title-half es">
+      <div class="section-icon">🚿</div>
+      <div>
+        <small>Sección 02</small>
+        <h2>Baño & Aseo</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">🚿</div>
+      <div>
+        <small>Section 02</small>
+        <h2>Bathroom & Hygiene</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Dejar el baño limpio y seco</strong> después de cada uso — ducha, lavabo y espejo.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Artículos personales guardados</strong> — champú, maquillaje, cepillo de dientes, etc., en la zona asignada o en la habitación.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Toallas colgadas</strong> en el toallero después de cada uso para que se sequen correctamente.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Papelera usada</strong> para los residuos — nunca tirar toallitas u objetos que no sean papel higiénico por el inodoro.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Avisar si se gasta</strong> el papel higiénico, gel o cualquier producto compartido.</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Leave the bathroom clean and dry</strong> after each use — shower, sink and mirror.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep personal items stored</strong> — shampoo, makeup, toothbrush, etc., in your designated area or in your room.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Hang towels on the towel rail</strong> after each use so they dry properly.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Use the bin</strong> for waste — never flush wipes or anything other than toilet paper.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Let us know</strong> if toilet paper, soap or any shared product runs out.</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 3: COCINA ══ -->
+  <div class="section-header">
+    <div class="section-title-half es">
+      <div class="section-icon">🍳</div>
+      <div>
+        <small>Sección 03</small>
+        <h2>Cocina & Comedor</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">🍳</div>
+      <div>
+        <small>Section 03</small>
+        <h2>Kitchen & Dining Area</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Fregar y guardar</strong> los platos, vasos y utensilios usados antes de abandonar la cocina.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Limpiar encimeras y vitrocerámica</strong> tras cocinar — sin restos de comida, grasa ni salpicaduras.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Guardar los alimentos bien cerrados</strong> en su lugar (nevera o armario), etiquetando lo que sea de uso personal.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Basura separada</strong> según los contenedores de reciclaje del hogar.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Avisar antes de usar productos</strong> del despensero o la nevera que no sean suyos — simplemente por cortesía.</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Wash and put away</strong> dishes, glasses and utensils before leaving the kitchen.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Wipe down countertops and the stovetop</strong> after cooking — no food residue, grease or splashes.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Store food properly</strong> (fridge or cupboard, sealed), labelling anything that's for personal use.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Sort waste correctly</strong> using the household recycling bins.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Check before using</strong> pantry or fridge items that aren't yours — just a matter of courtesy.</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 4: ZONAS COMUNES ══ -->
+  <div class="section-header">
+    <div class="section-title-half es">
+      <div class="section-icon">🛋️</div>
+      <div>
+        <small>Sección 04</small>
+        <h2>Zonas Comunes & Convivencia</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">🛋️</div>
+      <div>
+        <small>Section 04</small>
+        <h2>Common Areas & General Living</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Objetos personales en la habitación</strong> — bolsos, maletas, ropa y calzado no deben quedar en el salón, pasillo o entrada.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Salón ordenado</strong> tras usarlo — cojines en su sitio, manta doblada, vasos y snacks retirados.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Televisión y música a volumen razonable</strong> — especialmente después de las 20:00 h y durante las siestas del bebé.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Horario de silencio nocturno desde las 22:00 h</strong> — sin portazos, conversaciones en voz alta en pasillos ni música sin auriculares.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Consultar antes de invitar</strong> a otras personas al domicilio.</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep personal items in your room</strong> — bags, luggage, clothes and shoes should not be left in the living room, hallway or entrance.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Tidy up the living room after use</strong> — cushions back in place, blanket folded, glasses and snacks cleared away.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>TV and music at a reasonable volume</strong> — especially after 10:00 PM and during the baby's naps.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Quiet hours from 10:00 PM</strong> — no slamming doors, loud hallway conversations or music without headphones.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Check with us before inviting</strong> other people over to the house.</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 5: BEBÉ ══ -->
+  <div class="section-header baby-section">
+    <div class="section-title-half es">
+      <div class="section-icon">👶</div>
+      <div>
+        <small>Sección 05 — MUY IMPORTANTE</small>
+        <h2>Normas con el Bebé (8 meses)</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">👶</div>
+      <div>
+        <small>Section 05 — VERY IMPORTANT</small>
+        <h2>Baby Guidelines (8 months old)</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid baby-section">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Lavarse las manos</strong> siempre antes de coger al bebé, especialmente al llegar de la calle.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>No dar al bebé ningún alimento ni bebida</strong> sin consultarlo antes con los padres — está en fase de introducción de sólidos con normas específicas.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Respetar las siestas</strong> — durante el sueño del bebé, mantener el ambiente silencioso y evitar el portazo o ruidos bruscos.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>No mostrarle pantallas</strong> (móvil, tablet, TV) — hasta los 2 años se recomienda exposición cero a pantallas.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Nunca dejarle solo</strong> en un lugar elevado (sofá, cama, cambiador) ni sin supervisión adulta, aunque sea un instante.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Mantener el suelo libre</strong> de objetos pequeños, monedas, cables o cualquier cosa que pueda llevarse a la boca.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Consultad a los padres</strong> antes de cogerle, jugar con él o sacarle de su espacio habitual — especialmente si está descansando o comiendo.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>No usar perfumes fuertes</strong> ni colonias muy intensas cerca del bebé — su sistema olfativo es muy sensible.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Tras un día largo fuera o un viaje en avión o tren</strong>, ducharse y cambiarse de ropa antes de coger o estar en contacto cercano con el bebé — la ropa y la piel acumulan gérmenes, virus y contaminantes que pueden afectarle.</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Always wash your hands</strong> before holding the baby, especially when coming in from outside.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Do not give the baby any food or drink</strong> without checking with the parents first — he is in an active solid introduction phase with specific guidelines.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Respect nap time</strong> — keep the environment quiet and avoid slamming doors or sudden loud noises while the baby sleeps.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>No screens around the baby</strong> (phone, tablet, TV) — zero screen exposure is recommended until age 2.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Never leave him unattended</strong> on an elevated surface (sofa, bed, changing table) or without adult supervision, even for a moment.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Keep the floor clear</strong> of small objects, coins, cables or anything that could go in his mouth.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Check with the parents</strong> before picking him up, playing with him or moving him from his usual space — especially if he's resting or feeding.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Avoid strong perfumes or colognes</strong> near the baby — his sense of smell is very sensitive at this age.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>After a long day out or a journey by plane or train</strong>, shower and change clothes before holding or having close contact with the baby — clothing and skin accumulate germs, viruses and pollutants that can affect him.</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 6: ALCOHOL, TABACO & DROGAS ══ -->
+  <div class="section-header strict-section">
+    <div class="section-title-half es">
+      <div class="section-icon">🚫</div>
+      <div>
+        <small>Sección 06 — TOLERANCIA CERO</small>
+        <h2>Alcohol, Tabaco & Sustancias</h2>
+      </div>
+    </div>
+    <div class="section-title-half en">
+      <div class="section-icon">🚫</div>
+      <div>
+        <small>Section 06 — ZERO TOLERANCE</small>
+        <h2>Alcohol, Tobacco & Substances</h2>
+      </div>
+    </div>
+  </div>
+  <div class="rules-grid strict-section">
+    <div class="rules-col es">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Consumo responsable de alcohol</strong> — se puede consumir alcohol con moderación en zonas comunes, pero nunca en exceso ni de forma que afecte la convivencia o la seguridad del bebé.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Nunca cerca del bebé</strong> — no consumir bebidas alcohólicas mientras se está al cuidado del bebé o en su presencia directa.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Prohibido fumar en el interior</strong> — queda terminantemente prohibido fumar cigarrillos, cigarrillos electrónicos, vapes o cualquier dispositivo similar dentro de la vivienda, incluidos balcón y terraza.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Tolerancia cero con el tabaco cerca del bebé</strong> — si se fuma fuera del domicilio, lavarse las manos y cambiar de ropa antes de tener contacto con el bebé (humo de tercera mano).</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Prohibición absoluta de drogas recreativas</strong> — queda estrictamente prohibido el consumo, posesión o introducción de cualquier sustancia estupefaciente o droga recreativa en el domicilio. El incumplimiento de esta norma supondrá el fin inmediato de la visita.</div></div>
+    </div>
+    <div class="rules-col en">
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Responsible alcohol consumption</strong> — alcohol may be consumed in moderation in common areas, but never to excess or in a way that affects household harmony or the baby's safety.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Never around the baby</strong> — do not consume alcoholic drinks while caring for the baby or in his immediate presence.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>No smoking indoors</strong> — smoking cigarettes, e-cigarettes, vapes or any similar device is strictly forbidden inside the home, including any balcony or terrace.</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Zero tolerance for tobacco near the baby</strong> — if you smoke outside the home, wash your hands and change your clothes before having contact with the baby (third-hand smoke).</div></div>
+      <div class="rule-item"><div class="rule-bullet">✦</div><div class="rule-text"><strong>Absolute prohibition on recreational drugs</strong> — the use, possession or introduction of any narcotic or recreational substance into the home is strictly forbidden. Violation of this rule will result in the immediate end of the visit.</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER NOTE -->
+  <div class="footer-note">
+    <p>Gracias por respetar nuestras normas. Son el resultado de cuidar de nuestro hogar y de nuestro bebé con amor.</p>
+    <div class="center">❧</div>
+    <p class="right">Thank you for respecting these guidelines. They come from a place of love — for our home and for our little one.</p>
+  </div>
+
+  <!-- THANKS -->
+  <div class="thanks">
+    <div class="thanks-ornament">— ✦ —</div>
+    <h3>¡Bienvenidos! <span class="accent">/ Welcome!</span></h3>
+    <p>Cualquier duda, no dudéis en preguntarnos &nbsp;·&nbsp; For any questions, please don't hesitate to ask</p>
+  </div>
+
+</div>
+</body>
+</html>
